@@ -1,0 +1,43 @@
+exp:
+  root_ckpt_dir: "./checkpoint_dir"
+  root_log_dir: "./log"
+  name: "scalemogen_humanml3d_bsq24"
+  device: "cuda:0"
+  is_continue: false
+  is_train: true
+  seed: 10306
+
+vq_name: "scalemogen_humanml3d_bsq24"
+vq_ckpt: "latest.tar"
+
+data:
+  name: "humanml3d"
+  root_dir: "./data/HumanML3D"
+  unit_length: 4
+  joint_num: 22
+  dim_pose: 263
+  fps: 20
+  max_motion_length: 196
+  motion_length: 128
+  max_text_length: 20
+  min_motion_length: 40
+  contact_joints: [7, 10, 8, 11]
+
+predictor:
+  model: "scalemogen_layer12"
+  mask: false
+  ep: 100
+  lbs: 16
+  tblr: 6e-3
+  fp16: 0
+  use_bf16_eval: false
+  text_encoder_dtype: "fp32"
+  text_encoder_device: "cuda:0"
+  noise_apply_strength: 0.3
+  noise_apply_layers: 13
+  noise_apply_requant: 1
+  debug_bsc: 0
+  save_model_iters_freq: 1000
+  viz_every_n_steps: 1000
+  prof_freq: 50
+  log_freq: 50

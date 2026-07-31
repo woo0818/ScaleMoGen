@@ -1,0 +1,41 @@
+exp:
+  root_ckpt_dir: "./checkpoint_dir"
+  root_log_dir: "./log"
+  name: "scalemogen_snapmogen_bsq24_best_fid"
+  device: "cuda:0"
+  is_continue: false
+  is_train: true
+  seed: 10306
+
+vq_name: "scalemogen_snapmogen_bsq24_indiv_joint"
+vq_ckpt: "net_best_fid.tar"
+
+data:
+  name: "snapmogen"
+  root_dir: "./data/SnapMoGen"
+  unit_length: 8
+  joint_num: 24
+  dim_pose: 296
+  fps: 30
+  max_motion_length: 320
+  motion_length: 120
+  max_text_length: 120
+  min_motion_length: 128
+
+predictor:
+  model: "scalemogen_layer12"
+  mask: false
+  ep: 200
+  lbs: 8
+  tblr: 6e-3
+  fp16: 0
+  use_bf16_eval: false
+  text_encoder_dtype: "fp32"
+  text_encoder_device: "cuda:0"
+  noise_apply_strength: 0.3
+  noise_apply_layers: 13
+  noise_apply_requant: 1
+  debug_bsc: 0
+  save_model_iters_freq: 10000
+  prof_freq: 100
+  log_freq: 100
