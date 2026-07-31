@@ -1,6 +1,6 @@
-# ScaleMoGen(ECCV 2026)
+# ScaleMoGen (ECCV 2026)
 
-<h3>Official codebase for ScaleMoGen: Autoregressive Next-Scale Prediction for Human Motion Generation.</h3>
+<h3>Official PyTorch implementation of ScaleMoGen: Autoregressive Next-Scale Prediction for Human Motion Generation.</h3>
 
 <p align="center">
   <a href="https://woo0818.github.io/ScaleMoGen/">
@@ -11,12 +11,12 @@
   </a>
 </p>
 
-<h3>TL;DR: A next-scale token map prediction framework with a multi-scale skeletal-temporal hierarchy for human motion generation, enabling zero-shot motion editing.</h3>
+<h3>TL;DR: ScaleMoGen is a next-scale token-map prediction framework built on a multi-scale skeletal-temporal hierarchy for human motion generation and zero-shot motion editing.</h3>
 
-The code supports both SnapMoGen and HumanML3D through the same entrypoints;
-the dataset behavior is selected from `data.name` in each config file.
+ScaleMoGen supports both SnapMoGen and HumanML3D through a unified training and
+evaluation pipeline.
 
-## Motion Generation and Editing Results
+## Motion Generation and Zero-Shot Editing
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
@@ -62,9 +62,9 @@ pip install git+https://github.com/openai/CLIP.git
 ```
 
 Make sure the NVIDIA driver on your machine supports CUDA 11.7 runtime
-packages. Motion video rendering is validated with `matplotlib==3.3.4`; newer
-matplotlib releases can change the 3D animation output. Install `ffmpeg`
-separately if you want to render videos:
+packages. Motion rendering has been tested with `matplotlib==3.3.4`; newer
+versions may produce different 3D animation outputs. Install `ffmpeg` separately
+if you want to render videos:
 
 ```bash
 conda install -c conda-forge ffmpeg
@@ -93,10 +93,16 @@ gen_scalemogen.py
 edit_scalemogen.py
 ```
 
-## Data And Checkpoints
+## Data and Checkpoints
 
 Datasets and checkpoints are not included in the source tree. Place them under
 the following paths, or edit the paths in the config files.
+
+Pretrained ScaleMoGen checkpoints are available on
+[Hugging Face](https://huggingface.co/inwoohwang0818/ScaleMoGen). The model
+repository is gated, so request access and sign in before downloading the
+checkpoints. Place the downloaded files under `checkpoint_dir/` using the
+layout below.
 
 Large runtime assets such as datasets, evaluator checkpoints, pretrained
 checkpoints, downloaded GloVe files, and dataset prompt files are ignored by
@@ -151,7 +157,7 @@ bash prepare/download_evaluators.sh
 bash prepare/download_glove.sh
 ```
 
-The SnapMoGen evaluator files are expected under `checkpoint_dir/snapmogen/`.
+Evaluator files are expected under `checkpoint_dir/<dataset>/`.
 
 ```text
 checkpoint_dir/snapmogen/evaluator/eval_klde-5_late-5_nlayer6_norm/
@@ -166,7 +172,7 @@ checkpoint_dir/humanml3d/Comp_v6_KLD005/
 checkpoint_dir/humanml3d/text_mot_match/model/finest.tar
 ```
 
-Pretrained ScaleMoGen checkpoints should follow the same layout used by the
+The downloaded ScaleMoGen checkpoints should follow the layout expected by the
 configs:
 
 ```text
@@ -230,13 +236,13 @@ python gen_scalemogen.py --config config/eval_scalemogen_hml.yaml --mode test
 
 ## Editing
 
-SnapMoGen editing presets:
+Example using a SnapMoGen editing preset:
 
 ```bash
 python edit_scalemogen.py --config config/eval_scalemogen.yaml --preset dance_exaggerated
 ```
 
-## Reproducibility Notes
+## Notes
 
 - `text_encoder_dtype: "fp32"` is the default for evaluation and generation.
 - Set `text_encoder_device: "cpu"` in an eval config to reduce VRAM use. This
@@ -245,12 +251,10 @@ python edit_scalemogen.py --config config/eval_scalemogen.yaml --preset dance_ex
   sampled token indices across GPU types.
 - `sampling_device: "cuda"` is the default because it matched CPU sampling in
   our cross-device trace tests while avoiding unnecessary CPU transfer overhead.
-- If exact trace diagnosis is needed, keep diagnostic scripts and artifacts
-  outside the public source tree.
 
 ## Citation
 
-If you use this code, please cite ScaleMoGen:
+If you find our code or paper helpful, please consider citing the following:
 
 ```bibtex
 @misc{hwang2026scalemogenautoregressivenextscaleprediction,
