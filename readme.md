@@ -96,10 +96,8 @@ Datasets and checkpoints are not included in the source tree. Place them under
 the following paths, or edit the paths in the config files.
 
 Pretrained ScaleMoGen checkpoints are available on
-[Hugging Face](https://huggingface.co/inwoohwang0818/ScaleMoGen). The model
-repository is gated, so request access and sign in before downloading the
-checkpoints. Place the downloaded files under `checkpoint_dir/` using the
-layout below.
+[Hugging Face](https://huggingface.co/inwoohwang0818/ScaleMoGen). Place the
+downloaded files under `checkpoint_dir/` using the layout below.
 
 Large runtime assets such as datasets, evaluator checkpoints, pretrained
 checkpoints, downloaded GloVe files, and dataset prompt files are ignored by
