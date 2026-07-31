@@ -19,8 +19,26 @@ dataset behavior is selected from `data.name` in each config file.
 
 ## Motion Generation Results
 
-<p align="center"><img src="assets/motion_generation.gif" alt="A person is bowing politely" width="25%"><img src="assets/generation_zombie.gif" alt="A person is mimicking a slow zombie walk" width="25%"><img src="assets/generation_running.gif" alt="A person is running joyfully" width="25%"><img src="assets/generation_turning.gif" alt="A person walks and turns right" width="25%"></p>
-<p align="center"><sub>“A person is bowing politely.” · “A person is mimicking a slow zombie walk.” · “A person is running joyfully.” · “A person walks and turns right.”</sub></p>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="center" width="25%" valign="top">
+      <img src="assets/motion_generation.gif" alt="A person is bowing politely" width="100%"><br>
+      <small><em>“A person is bowing politely.”</em></small>
+    </td>
+    <td align="center" width="25%" valign="top">
+      <img src="assets/generation_zombie.gif" alt="A person is mimicking a slow zombie walk" width="100%"><br>
+      <small><em>“A person is mimicking a slow zombie walk.”</em></small>
+    </td>
+    <td align="center" width="25%" valign="top">
+      <img src="assets/generation_running.gif" alt="A person is running joyfully" width="100%"><br>
+      <small><em>“A person is running joyfully.”</em></small>
+    </td>
+    <td align="center" width="25%" valign="top">
+      <img src="assets/generation_turning.gif" alt="A person walks and turns right" width="100%"><br>
+      <small><em>“A person walks and turns right.”</em></small>
+    </td>
+  </tr>
+</table>
 
 ## Environment
 
