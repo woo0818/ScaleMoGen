@@ -252,9 +252,7 @@ python edit_scalemogen.py --config config/eval_scalemogen.yaml --preset dance_ex
 We sincerely thank the authors of the following open-source projects, upon
 which our code is built:
 
-- [SnapMoGen](https://github.com/snap-research/SnapMoGen)
-- [VAR](https://github.com/FoundationVision/VAR)
-- [Infinity](https://github.com/FoundationVision/Infinity)
+[SnapMoGen](https://github.com/snap-research/SnapMoGen) · [VAR](https://github.com/FoundationVision/VAR) · [Infinity](https://github.com/FoundationVision/Infinity) · [SALAD](https://github.com/seokhyeonhong/salad)
 
 ## Citation
 
