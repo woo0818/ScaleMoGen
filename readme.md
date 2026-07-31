@@ -247,6 +247,15 @@ python edit_scalemogen.py --config config/eval_scalemogen.yaml --preset dance_ex
 - `sampling_device: "cuda"` is the default because it matched CPU sampling in
   our cross-device trace tests while avoiding unnecessary CPU transfer overhead.
 
+## Acknowledgements
+
+We sincerely thank the authors of the following open-source projects, upon
+which our code is built:
+
+- [SnapMoGen](https://github.com/snap-research/SnapMoGen)
+- [VAR](https://github.com/FoundationVision/VAR)
+- [Infinity](https://github.com/FoundationVision/Infinity)
+
 ## Citation
 
 If you find our code or paper helpful, please consider citing the following:
