@@ -1,41 +1,40 @@
 # ScaleMoGen(ECCV 2026)
 
-Official codebase for **ScaleMoGen: Autoregressive Next-Scale Prediction for
-Human Motion Generation**.
+<h3>Official codebase for ScaleMoGen: Autoregressive Next-Scale Prediction for Human Motion Generation.</h3>
 
 <p align="center">
   <a href="https://woo0818.github.io/ScaleMoGen/">
-    <img src="https://img.shields.io/badge/Project-Page-2ea44f" alt="Project Page">
+    <img src="https://img.shields.io/badge/Project-Page-2ea44f?logo=githubpages&amp;logoColor=white" alt="Project Page" height="28">
   </a>
   <a href="https://arxiv.org/abs/2605.11704">
-    <img src="https://img.shields.io/badge/arXiv-2605.11704-b31b1b" alt="arXiv">
+    <img src="https://img.shields.io/badge/arXiv-2605.11704-b31b1b?logo=arxiv&amp;logoColor=white" alt="arXiv" height="28">
   </a>
 </p>
 
-A next-scale token map prediction framework with a multi-scale skeletal-temporal
-hierarchy for human motion generation, enabling zero-shot motion editing. The
-code supports both SnapMoGen and HumanML3D through the same entrypoints; the
-dataset behavior is selected from `data.name` in each config file.
+<h3>TL;DR: A next-scale token map prediction framework with a multi-scale skeletal-temporal hierarchy for human motion generation, enabling zero-shot motion editing.</h3>
 
-## Motion Generation Results
+The code supports both SnapMoGen and HumanML3D through the same entrypoints;
+the dataset behavior is selected from `data.name` in each config file.
+
+## Motion Generation and Editing Results
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td align="center" width="25%" valign="top">
-      <img src="assets/motion_generation.gif" alt="A person is bowing politely" width="100%"><br>
-      <small><em>“A person is bowing politely.”</em></small>
+    <td align="center" width="50%" valign="top">
+      <strong>Motion Generation</strong><br>
+      <a href="https://woo0818.github.io/ScaleMoGen/">
+        <img src="assets/scalemogen_motion_generation.gif"
+             alt="ScaleMoGen text-to-motion generation results"
+             width="100%">
+      </a>
     </td>
-    <td align="center" width="25%" valign="top">
-      <img src="assets/generation_zombie.gif" alt="A person is mimicking a slow zombie walk" width="100%"><br>
-      <small><em>“A person is mimicking a slow zombie walk.”</em></small>
-    </td>
-    <td align="center" width="25%" valign="top">
-      <img src="assets/generation_running.gif" alt="A person is running joyfully" width="100%"><br>
-      <small><em>“A person is running joyfully.”</em></small>
-    </td>
-    <td align="center" width="25%" valign="top">
-      <img src="assets/generation_turning.gif" alt="A person walks and turns right" width="100%"><br>
-      <small><em>“A person walks and turns right.”</em></small>
+    <td align="center" width="50%" valign="top">
+      <strong>Zero-Shot Motion Editing</strong><br>
+      <a href="https://woo0818.github.io/ScaleMoGen/">
+        <img src="assets/scalemogen_motion_editing.gif"
+             alt="ScaleMoGen zero-shot motion editing results"
+             width="100%">
+      </a>
     </td>
   </tr>
 </table>
