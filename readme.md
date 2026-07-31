@@ -11,10 +11,7 @@
   </a>
 </p>
 
-<h3>TL;DR: ScaleMoGen is a next-scale token-map prediction framework built on a multi-scale skeletal-temporal hierarchy for human motion generation and zero-shot motion editing.</h3>
-
-ScaleMoGen supports both SnapMoGen and HumanML3D through a unified training and
-evaluation pipeline.
+TL;DR: ScaleMoGen is a next-scale token-map prediction framework built on a multi-scale skeletal-temporal hierarchy for human motion generation and zero-shot motion editing.
 
 ## Motion Generation and Zero-Shot Editing
 
