@@ -1,10 +1,10 @@
-# ScaleMoGen
+# ScaleMoGen(ECCV 2026)
 
 Official codebase for **ScaleMoGen: Autoregressive Next-Scale Prediction for
 Human Motion Generation**.
 
 <p align="center">
-  <a href="https://inwoohwang.me/ScaleMoGen/">
+  <a href="https://woo0818.github.io/ScaleMoGen/">
     <img src="https://img.shields.io/badge/Project-Page-2ea44f" alt="Project Page">
   </a>
   <a href="https://arxiv.org/abs/2605.11704">
@@ -12,10 +12,15 @@ Human Motion Generation**.
   </a>
 </p>
 
-ScaleMoGen trains a hierarchical BSQ motion tokenizer and an autoregressive
-motion-token predictor for text-to-motion generation. The code supports both
-SnapMoGen and HumanML3D through the same entrypoints; the dataset behavior is
-selected from `data.name` in each config file.
+A next-scale token map prediction framework with a multi-scale skeletal-temporal
+hierarchy for human motion generation, enabling zero-shot motion editing. The
+code supports both SnapMoGen and HumanML3D through the same entrypoints; the
+dataset behavior is selected from `data.name` in each config file.
+
+## Motion Generation Results
+
+<p align="center"><img src="assets/motion_generation.gif" alt="A person is bowing politely" width="25%"><img src="assets/generation_zombie.gif" alt="A person is mimicking a slow zombie walk" width="25%"><img src="assets/generation_running.gif" alt="A person is running joyfully" width="25%"><img src="assets/generation_turning.gif" alt="A person walks and turns right" width="25%"></p>
+<p align="center"><sub>“A person is bowing politely.” · “A person is mimicking a slow zombie walk.” · “A person is running joyfully.” · “A person walks and turns right.”</sub></p>
 
 ## Environment
 
@@ -46,15 +51,6 @@ separately if you want to render videos:
 
 ```bash
 conda install -c conda-forge ffmpeg
-```
-
-Quick import check:
-
-```bash
-python - <<'PY'
-import torch, timm, transformers, einops, einx
-print("torch", torch.__version__, "cuda", torch.cuda.is_available())
-PY
 ```
 
 ## Repository Layout
